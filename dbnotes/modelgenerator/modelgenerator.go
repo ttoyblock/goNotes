@@ -88,14 +88,15 @@ func main() {
 
 	render := template.Must(template.New("model").
 		Funcs(template.FuncMap{
-			"FirstCharUpper":       modeltool.FirstCharUpper,
-			"TypeConvert":          modeltool.TypeConvert,
-			"Tags":                 modeltool.Tags,
-			"ExportColumn":         modeltool.ExportColumn,
-			"Join":                 modeltool.Join,
-			"MakeQuestionMarkList": modeltool.MakeQuestionMarkList,
-			"ColumnAndType":        modeltool.ColumnAndType,
-			"ColumnWithPostfix":    modeltool.ColumnWithPostfix,
+			"FirstCharUpper":             modeltool.FirstCharUpper,
+			"FirstCharUpperPerUnderline": modeltool.FirstCharUpperPerUnderline,
+			"TypeConvert":                modeltool.TypeConvert,
+			"Tags":                       modeltool.Tags,
+			"ExportColumn":               modeltool.ExportColumn,
+			"Join":                       modeltool.Join,
+			"MakeQuestionMarkList":       modeltool.MakeQuestionMarkList,
+			"ColumnAndType":              modeltool.ColumnAndType,
+			"ColumnWithPostfix":          modeltool.ColumnWithPostfix,
 		}).
 		Parse(string(data)))
 

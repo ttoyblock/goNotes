@@ -93,17 +93,25 @@ func IsUUID(str string) bool {
 func FirstCharLower(str string) string {
 	if len(str) > 0 {
 		return strings.ToLower(str[0:1]) + str[1:]
-	} else {
-		return ""
 	}
+	return ""
 }
 
 func FirstCharUpper(str string) string {
 	if len(str) > 0 {
 		return strings.ToUpper(str[0:1]) + str[1:]
-	} else {
-		return ""
 	}
+	return ""
+}
+
+func FirstCharUpperPerUnderline(str string) (ret string) {
+	vs := strings.Split(str, "_")
+	for _, v := range vs {
+		if len(str) > 0 {
+			ret += strings.ToUpper(v[0:1]) + v[1:]
+		}
+	}
+	return
 }
 
 func Tags(columnName string) template.HTML {

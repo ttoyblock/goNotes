@@ -6,15 +6,16 @@ cur=`pwd`/dbnotes/modelgenerator
 
 go run $cur/modelgenerator.go \
 -tplFile=$cur'/model_test.tpl' \
--modelFolder='./model_test/' \    # 输出目录
+-modelFolder='./model_test/' \
 -packageName='model' \
--dbIP='127.0.0.1'  \
+-dbIP='alpha'  \
 -dbPort=3306 \
 -dbConnection='dbhelper.DB' \
--dbName='dbnote' \
+-dbName='ultrax' \
 -userName='root' \
--pwd='123456' \
--genTable='mail#msg#notice' \
+-pwd='' \
+-genTable='pre_system_time_task' \
 
 echo 'done'
 
+# sh dbnotes/modelgenerator/dbmodelgen.sh

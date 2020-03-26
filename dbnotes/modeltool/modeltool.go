@@ -86,6 +86,11 @@ func (m *ModelInfo) PkColumns() []string {
 	return result
 }
 
+func (m *ModelInfo) PkColumn() string {
+	pkColumnsSchema := m.PkColumnsSchema()
+	return pkColumnsSchema[0].COLUMN_NAME
+}
+
 func IsUUID(str string) bool {
 	return "uuid" == str
 }
@@ -151,6 +156,37 @@ func TypeConvert(str string) string {
 
 	case "int":
 		return "int"
+
+	case "timestamp", "datetime":
+		return "time.Time"
+
+	case "bigint":
+		return "int64"
+
+	case "float", "double", "decimal":
+		return "float64"
+	case "uuid":
+		return "gocql.UUID"
+
+	default:
+		return str
+	}
+}
+
+func TypeConvertV2(str string) string {
+
+	switch str {
+	case "smallint", "tinyint":
+		return "int"
+
+	case "varchar", "text", "longtext", "char":
+		return "string"
+
+	case "date":
+		return "string"
+
+	case "int", "mediumint":
+		return "int64"
 
 	case "timestamp", "datetime":
 		return "time.Time"

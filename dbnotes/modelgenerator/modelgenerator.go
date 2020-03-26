@@ -91,6 +91,7 @@ func main() {
 			"FirstCharUpper":             modeltool.FirstCharUpper,
 			"FirstCharUpperPerUnderline": modeltool.FirstCharUpperPerUnderline,
 			"TypeConvert":                modeltool.TypeConvert,
+			"TypeConvertV2":              modeltool.TypeConvertV2,
 			"Tags":                       modeltool.Tags,
 			"ExportColumn":               modeltool.ExportColumn,
 			"Join":                       modeltool.Join,

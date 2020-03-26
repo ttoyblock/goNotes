@@ -89,6 +89,7 @@ func main() {
 	render := template.Must(template.New("model").
 		Funcs(template.FuncMap{
 			"FirstCharUpper":             modeltool.FirstCharUpper,
+			"StringUpper":                modeltool.StringUpper,
 			"FirstCharUpperPerUnderline": modeltool.FirstCharUpperPerUnderline,
 			"TypeConvert":                modeltool.TypeConvert,
 			"Tags":                       modeltool.Tags,

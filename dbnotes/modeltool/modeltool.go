@@ -104,6 +104,13 @@ func FirstCharUpper(str string) string {
 	return ""
 }
 
+func StringUpper(str string) string {
+	if len(str) > 0 {
+		return strings.ToUpper(str)
+	}
+	return ""
+}
+
 func FirstCharUpperPerUnderline(str string) (ret string) {
 	vs := strings.Split(str, "_")
 	for _, v := range vs {
@@ -141,7 +148,7 @@ func TypeConvert(str string) string {
 
 	switch str {
 	case "smallint", "tinyint":
-		return "int8"
+		return "int64"
 
 	case "varchar", "text", "longtext", "char":
 		return "string"
@@ -150,7 +157,7 @@ func TypeConvert(str string) string {
 		return "string"
 
 	case "int":
-		return "int"
+		return "int64"
 
 	case "timestamp", "datetime":
 		return "time.Time"
